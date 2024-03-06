@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Alert from "../Alert";
-import Button from "../Button";
- 
+import Button from "../Button/Button";
+
 function App() {
   const [alertVisible, setAlertVisibility] = useState(false);
 
