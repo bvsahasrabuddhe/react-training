@@ -1,20 +1,13 @@
 import { useState } from "react";
 
 function App() {
-  const [tags, setTags] = useState(["happy", "cheerful"]);
+  const [bugs, setBugs] = useState([
+    { id: 1, title: "Bug 1", fixed: false },
+    { id: 2, title: "Bug 2", fixed: false },
+  ]);
 
   const handleClick = () => {
-    //Add
-    setTags([...tags, "exciting"]);
-
-    //Remove
-    setTags(tags.filter((tag) => tag !== "happy"));
-
-    // Update
-    //  Here we can write an expression like if tag equals happy.
-    //  We are going to change that to happiness otherwise
-    //  we are going to return the tag
-    setTags(tags.map((tag) => (tag === "happy" ? "happiest" : tag)));
+    setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
   };
   return (
     <div>
