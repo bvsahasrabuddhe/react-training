@@ -15,8 +15,8 @@ function App() {
   return (
     <div>
       <Message />
-      <Message />
-      <Message />
+      {/* <Message />
+      <Message /> */}
       {/* <Like onClick={() => console.log("clicked")} /> */}
 
       {/* <Button onClick={() => {}}>My Button</Button> */}

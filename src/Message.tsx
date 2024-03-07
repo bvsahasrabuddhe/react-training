@@ -5,10 +5,10 @@
 //     return <h1> Welcome to B2A Technologies Private Limited </h1>;
 // }
 
-// let count = 0;
+let count = 0;
 
 const Message = () => {
-  let count = 0;
+  console.log("Message called", count);
   count++;
   return <div> Message {count}</div>;
 };
