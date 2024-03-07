@@ -1,17 +1,19 @@
 import { useState } from "react";
 
 function App() {
-  const [game, setGame] = useState({
-    id: 1,
-    player: {
-      name: "Bhalchandra",
-    },
+  const [pizza, setPizza] = useState({
+    name: "Veg Margarita",
+    toppings: ["Mushroom"],
   });
 
   const handleClick = () => {
-    setGame({ ...game, player: { ...game.player, name: "Bharat" } });
+    setPizza({ ...pizza, toppings: [...pizza.toppings, "Cheese"] });
   };
-  return <div></div>;
+  return (
+    <div>
+      <button onClick={handleClick}> Add Toppings </button>
+    </div>
+  );
 }
 
 export default App;
