@@ -2,7 +2,11 @@
 // import "./App.css";
 //import { AiFillDollarCircle } from "react-icons/ai";
 //import Button from "./components/Button/Button";
-import Like from "./components/Like";
+
+//import Like from "./components/Like";
+
+import Message from "./Message";
+
 function App() {
   // let items = ["Sangli", "Jaysingpur", "Miraj", "Kupwad"];
   // const handleSelectItem = (item: string) => {
@@ -10,7 +14,10 @@ function App() {
   // };
   return (
     <div>
-      <Like onClick={() => console.log("clicked")} />
+      <Message />
+      <Message />
+      <Message />
+      {/* <Like onClick={() => console.log("clicked")} /> */}
 
       {/* <Button onClick={() => {}}>My Button</Button> */}
 
