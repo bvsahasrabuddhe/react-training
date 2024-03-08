@@ -2,7 +2,7 @@ import React from "react";
 
 const Form = () => {
   return (
-    <form>
+    <form onSubmit={() => console.log("Submitted")}>
       <div className="mb-3">
         <label htmlFor="name" className="form-label">
           Name
