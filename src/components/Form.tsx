@@ -2,21 +2,10 @@ import React, { FormEvent, useState } from "react";
 import { useForm } from "react-hook-form";
 
 const Form = () => {
-  const { register } = useForm();
-  console.log(register("name"));
-
-  const [person, setPerson] = useState({
-    name: " ",
-    age: 0,
-  });
-
-  const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    console.log(person);
-  };
+  const { register, handleSubmit } = useForm();
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit((data) => console.log(data))}>
       <div className="mb-3">
         <label htmlFor="name" className="form-label">
           Name
