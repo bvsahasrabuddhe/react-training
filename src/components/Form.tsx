@@ -1,6 +1,10 @@
 import React, { FormEvent, useState } from "react";
+import { useForm } from "react-hook-form";
 
 const Form = () => {
+  const { register } = useForm();
+  console.log(register("name"));
+
   const [person, setPerson] = useState({
     name: " ",
     age: 0,
@@ -18,10 +22,7 @@ const Form = () => {
           Name
         </label>
         <input
-          onChange={(event) =>
-            setPerson({ ...person, name: event.target.value })
-          }
-          value={person.name}
+          {...register("name")}
           id="name"
           type="text"
           className="form-control"
@@ -32,10 +33,7 @@ const Form = () => {
           Age
         </label>
         <input
-          onChange={(event) =>
-            setPerson({ ...person, age: parseInt(event.target.value) })
-          }
-          value={person.age}
+          {...register("age")}
           id="age"
           type="number"
           className="form-control"
