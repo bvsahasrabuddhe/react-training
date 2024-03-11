@@ -4,7 +4,7 @@ import { z } from "Zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const schema = z.object({
-  name: z.string().min(3),
+  name: z.string().min(3, { message: "Name must be at least 3 characters" }),
   age: z.number().min(18),
 });
 
