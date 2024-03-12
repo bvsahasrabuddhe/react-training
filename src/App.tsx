@@ -42,8 +42,20 @@ const App = () => {
       });
   };
   const addUser = () => {
+    const originalUsers = [...users];
     const newUser = { id: 0, name: "Bhalchandra" };
     setUsers([newUser, ...users]);
+
+    axios
+      .post("https://jsonplaceholder.typicode.com/xusers", newUser)
+      .then(({ data: savedUser }) => setUsers([savedUser, ...users]))
+      .catch((err) => {
+        setError(err.message);
+        setUsers(originalUsers);
+      });
+
+    // .then((res) => setUsers([res.data, ...users]));
+    // if counter error then
   };
 
   return (
