@@ -59,8 +59,19 @@ const App = () => {
   };
 
   const updateUser = (user: User) => {
+    const originalUsers = [...users];
     const updatedUser = { ...user, name: user.name + "!" };
     setUsers(users.map((u) => (u.id === user.id ? updatedUser : u)));
+
+    axios
+      .patch(
+        "https://jsonplaceholder.typicode.com/users/" + user.id,
+        updatedUser
+      )
+      .catch((err) => {
+        setError(err.message);
+        const originalUsers = [...users];
+      });
   };
   return (
     <>
