@@ -22,6 +22,10 @@ class UserService {
     createUser(user:User){
         return apiClient.post("/users", user)  // rename newUSer to user & return promise to this method  
     }
+
+    updateUser(user:User){
+        return apiClient.patch("/users/" + user.id, user) // rename updatedUser to user & return promise to this method  
+    }
 }
 
 export default new UserService();
