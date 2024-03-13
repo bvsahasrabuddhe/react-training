@@ -15,8 +15,12 @@ class UserService {
     }
 
     deleteUser(id:number){
-        return apiClient.delete("/users/" + id)  // changed user.id to id next should return promise method y
+        return apiClient.delete("/users/" + id)  // changed user.id to id next should return promise method  
 
+    }
+
+    createUser(user:User){
+        return apiClient.post("/users", user)  // rename newUSer to user & return promise to this method  
     }
 }
 

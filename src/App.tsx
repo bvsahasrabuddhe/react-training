@@ -39,8 +39,8 @@ const App = () => {
     const newUser = { id: 0, name: "Bhalchandra" };
     setUsers([newUser, ...users]);
 
-    apiClient
-      .post("/users", newUser)
+    userService
+      .createUser(newUser)
       .then(({ data: savedUser }) => setUsers([savedUser, ...users]))
       .catch((err) => {
         setError(err.message);
